@@ -47,7 +47,7 @@ defmodule ExAws.S3.Mixfile do
       {:bypass, "~> 2.1", only: :test},
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:hackney, ">= 0.0.0", only: [:dev, :test]},
+      {:hackney, ">= 0.0.0"},
       {:jason, ">= 0.0.0", only: [:dev, :test]},
       {:sweet_xml, ">= 0.0.0", optional: true},
       ex_aws()
@@ -57,7 +57,7 @@ defmodule ExAws.S3.Mixfile do
   defp ex_aws() do
     case System.get_env("AWS") do
       "LOCAL" -> {:ex_aws, path: "../ex_aws"}
-      _ -> {:ex_aws, "~> 2.0"}
+      _ -> {:ex_aws, "~> 2.0", organization: "betty_blocks_bv"}
     end
   end
 end
